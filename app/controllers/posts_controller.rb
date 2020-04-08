@@ -12,8 +12,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(content: params[:content])
-    @post.save
-    redirect_to("/posts/index")
+    if @post.save
+      flash[:notice] = "投稿を作成しました"
+      redirect_to("/posts/index")
+    else
+      flash[:alert] = "不正な入力です"
+      render("posts/new")
+    end
   end
 
   def edit
@@ -23,8 +28,13 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
-    @post.save
-    redirect_to("/posts/index")
+    if @post.save
+      flash[:notice] = "投稿を編集しました"
+      redirect_to("/posts/index")
+    else
+      flash[:alert] = "不正な入力です"
+      render("posts/edit")
+    end
   end
 
   def delete
