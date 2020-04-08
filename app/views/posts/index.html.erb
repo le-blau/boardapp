@@ -3,7 +3,7 @@
 <div class="d-flex flex-column">
 	<% @posts.each do |post| %>
 		<div class="p-1">
-			<%= link_to(post.content, "/posts/#{post.id}/edit") %>
+			<%= link_to(post.content, "/posts/#{post.id}") %>
 		</div>
 	<% end %>
 </div>
