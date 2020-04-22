@@ -1,0 +1,11 @@
+<h1>ユーザー編集</h1>
+
+<%= form_tag("/users/#{@user.id}/update") do %>
+    <% @user.errors.full_messages.each do |message| %>
+    <div class="form-error">
+        <%= message %>
+    </div>
+    <% end %>
+  <textarea name="name"><%= @user.name %></textarea>
+  <input type="submit" value="保存">
+<% end %>
