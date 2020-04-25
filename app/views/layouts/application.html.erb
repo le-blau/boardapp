@@ -18,7 +18,8 @@
         <a class="p-2 text-dark" href="#"><%= link_to("ユーザー一覧", "/users/index") %></a>
       </nav>
       ユーザーid:<%= session[:user_id] %>
-      <a class="btn btn-outline-primary" href="/users/login_form">Login</a>
+      <a class="btn btn-outline-primary" href="/login">Login</a>
+      <%= link_to("Logout", "/logout", {method: :post, class: "btn btn-outline-primary"}) %>
       <a class="btn btn-outline-primary" href="/users/new">Sign Up</a>
     </div>
 
