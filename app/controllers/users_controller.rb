@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       )
     if @user.save
       flash[:notice] = "登録しました"
+      session[:user_id] = @user.id
       redirect_to("/users/index")
     else
       flash[:alert] = "不正な入力です"
