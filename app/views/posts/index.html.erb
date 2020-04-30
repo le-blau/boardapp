@@ -1,6 +1,13 @@
 <h1>投稿一覧</h1>
 
 <div class="d-flex flex-column">
+  <%= form_tag("/posts/index", {:method=>"get"}) do %>
+	<input type="text" name="searchword">
+    <input type="submit" value="検索">
+  <% end %>
+</div>
+
+<div class="d-flex flex-column">
 	<% @posts.each do |post| %>
 		<div class="p-1">
 			<%= link_to(post.content, "/posts/#{post.id}") %>

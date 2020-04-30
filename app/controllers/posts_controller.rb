@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user, {only:[:index, :show, :edit, :update]}
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    if params[:searchword].blank?
+      @posts = Post.all.order(created_at: :desc)
+    else
+      @posts = Post.search(params[:searchword])
+    end
   end
 
   def new
