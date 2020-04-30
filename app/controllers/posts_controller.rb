@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     if params[:searchword].blank?
       @posts = Post.all.order(created_at: :desc)
     else
-      @posts = Post.search(params[:searchword])
+      @posts = Post.search(params[:searchword]).order(created_at: :desc)
     end
   end
 
