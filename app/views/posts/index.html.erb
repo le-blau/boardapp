@@ -13,7 +13,7 @@
 	<% @posts.each do |post| %>
 		<div class="card bg-light mb-1">
 			<div class="card-body p-1">
-				<%= link_to(post.content, "/posts/#{post.id}") %>
+				<%= link_to(post.content, "/posts/#{post.id}", {class: "text-decoration-none"}) %>
 			</div>
 		</div>
 	<% end %>
