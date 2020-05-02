@@ -11,10 +11,7 @@ gem 'rails', '~> 5.0.3'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.3.6'
 
-# 開発・テスト環境ではSQLite3を使う
-group :development, :test do
-  gem 'sqlite3', '~> 1.3.6'
-end
+
 # 本番環境ではPostgresqlを使う
 group :production do
   gem 'pg'
@@ -58,6 +55,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  
+  gem 'sqlite3', '~> 1.3.6'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
