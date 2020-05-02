@@ -18,6 +18,7 @@ end
 # 本番環境ではPostgresqlを使う
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Use Puma as the app server
