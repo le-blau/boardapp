@@ -1,24 +1,11 @@
-# README
+# 概要
+Ruby on Railsを使って作った掲示板アプリ。基本的なCRUD, 認証を実装した。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 目的
+Webアプリへの理解を深める
 
-Things you may want to cover:
+# 技術選定理由
+仕事では.NETでウェブアプリケーション開発をしていたので、違う言語・フレームワークを試して見るためRoRを採用した。フロントエンドはBootstrapで少しだけデザイン適用をしてみた。Herokuでホスティングした。
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
