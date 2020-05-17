@@ -37,9 +37,10 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    
     if @user.save
-      flash[:notice] = "投稿を編集しました"
-      redirect_to("/users/index")
+      flash[:notice] = "ユーザー情報を編集しました"
+      redirect_to("/users/#{@user.id}")
     else
       flash[:alert] = "不正な入力です"
       render("users/edit")
