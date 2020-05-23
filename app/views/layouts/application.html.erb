@@ -9,27 +9,27 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><%= link_to("Board", "/", {class: "text-decoration-none"}) %></h5>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-secondary border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-normal"><%= link_to("Board", "/", {class: "text-decoration-none text-white"}) %></h5>
 
       <nav class="my-2 my-md-0 mr-md-3">
         <% if session[:user_id] %>
-          <a class="p-2 text-dark" href="#"><%= link_to("新規投稿", "/posts/new", {class: "text-decoration-none"}) %></a>
-          <a class="p-2 text-dark" href="#"><%= link_to("投稿一覧", "/posts/index", {class: "text-decoration-none"}) %></a>
-          <a class="p-2 text-dark" href="#"><%= link_to("ユーザー一覧", "/users/index", {class: "text-decoration-none"}) %></a>
-          <%= link_to("Logout", "/logout", {method: :post, class: "btn btn-outline-primary mx-2"}) %>
-          <%= @current_user.name %>
+          <p class="text-white d-inline"><%= @current_user.name %></p>
+          <a class="p-2" href="#"><%= link_to("新規投稿", "/posts/new", {class: "text-decoration-none text-white"}) %></a>
+          <a class="p-2" href="#"><%= link_to("投稿一覧", "/posts/index", {class: "text-decoration-none text-white"}) %></a>
+          <a class="p-2" href="#"><%= link_to("ユーザー一覧", "/users/index", {class: "text-decoration-none text-white"}) %></a>
+          <%= link_to("Logout", "/logout", {method: :post, class: "btn btn-primary mx-2"}) %>
         <% else %>
-          <a class="p-2 text-dark" href="#"><%= link_to("Boardについて", "/about", {class: "text-decoration-none"}) %></a>
-          <a class="btn btn-outline-primary" href="/login">Login</a>
-          <a class="btn btn-outline-primary" href="/users/new">Sign Up</a>
+          <a href="#"><%= link_to("Boardについて", "/about", {class: "text-decoration-none text-white mx-1"}) %></a>
+          <a class="btn btn-primary mx-1" href="/login">Login</a>
+          <a class="btn btn-success mx-1" href="/users/new">Sign Up</a>
         <% end %>      
       </nav>
 
     </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice text-success text-center"><%= notice %></p>
+    <p class="alert text-danger"><%= alert %></p>
     
     <div class="container">
       <%= yield %>

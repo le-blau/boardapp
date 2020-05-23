@@ -1,6 +1,6 @@
 <h1>投稿一覧</h1>
 
-<div class="d-flex flex-column mb-4">
+<div class="d-flex flex-column mb-3">
   <form class="form-inline">
 		<%= form_tag("/posts/index", {:method=>"get"}) do %>
 		<input type="text" name="searchword" class="form-control">
@@ -11,10 +11,10 @@
 
 <div class="d-flex flex-column">
 	<% @posts.each do |post| %>
-		<div class="card bg-light mb-1">
-		<%= link_to(post.user.name, "/users/#{post.user.id}") %>
+		<div class="card bg-light mb-1 px-3 py-2">
+		<%= link_to(post.user.name, "/users/#{post.user.id}", {class: "text-decoration-none text-info"}) %>
 			<div class="card-body p-1">	
-				<%= link_to(post.content, "/posts/#{post.id}", {class: "text-decoration-none"}) %>
+				<%= link_to(post.content, "/posts/#{post.id}", {class: "text-decoration-none text-dark"}) %>
 			</div>
 		</div>
 	<% end %>

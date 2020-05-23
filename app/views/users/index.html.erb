@@ -3,7 +3,7 @@
 <div class="d-flex flex-column">
 	<% @users.each do |user| %>
 		<div class="p-1">
-			<%= link_to(user.name, "/users/#{user.id}") %>
+			<%= link_to(user.name, "/users/#{user.id}",{class: "text-info"}) %>
 		</div>
 	<% end %>
 </div>

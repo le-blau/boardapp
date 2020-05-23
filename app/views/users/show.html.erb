@@ -1,13 +1,16 @@
 <h1>ユーザー詳細</h1>
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
-<%= link_to("編集", "/users/#{@user.id}/edit") %>
+<p class="mb-0">ユーザー名</p>
+<p class="mb-0"><%= @user.name %></p>
+<p class="mb-0">メールアドレス</p>
+<p class="mb-1"><%= @user.email %></p>
+<%= link_to("ユーザー情報を編集", "/users/#{@user.id}/edit", {class: "btn btn-secondary btn-sm mb-5"}) %>
 
+<p>投稿</p>
 <div class="d-flex flex-column">
 	<% @user.posts.each do |post| %>
 		<div class="card bg-light mb-1">
 			<div class="card-body p-1">	
-				<%= link_to(post.content, "/posts/#{post.id}", {class: "text-decoration-none"}) %>
+				<%= link_to(post.content, "/posts/#{post.id}", {class: "text-decoration-none text-dark"}) %>
 			</div>
 		</div>
 	<% end %>

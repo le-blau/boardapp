@@ -1,15 +1,15 @@
 <h1>ログイン</h1>
 <%= form_tag("/login") do %>
   <div class="form">
-    <div class="form-error">
+    <div class="form-error text-danger">
   	  <%= @error_message %>
     </div>
-    <p>メールアドレス</p>
+    <p class="m-0">メールアドレス</p>
     <input name="email" value="<%= @email %>">
-    <p>パスワード</p>
+    <p class="m-0">パスワード</p>
     <input type="password" name="password" value="<%= @password %>">
-    <div>
-    	<input type="submit" value="ログイン">
-		</div>
+    <p>
+    	<input type="submit" class="btn btn btn-primary btn-sm mt-2" value="ログイン">
+		</p>
   </div>
 <% end %>

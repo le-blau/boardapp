@@ -1,7 +1,11 @@
-<h1>詳細</h1>
-<%= link_to(@user.name, "/users/#{@user.id}") %>
-<p><%= @post.content %></p>
-<% if @post.user_id == @current_user.id %>
-  <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-  <%= link_to("削除", "/posts/#{@post.id}/delete", {method: "post", data: {confirm: "本当に削除しますか"}}) %>
-<% end %>
+<h1>投稿詳細</h1>
+<div class="card bg-light px-3 py-2">
+  <%= link_to(@user.name, "/users/#{@user.id}", {class: "text-decoration-none text-info"}) %>
+  <div class="card-body p-1">
+    <p class="text-decoration-none text-dark"><%= @post.content %></p>
+    <% if @post.user_id == @current_user.id %>
+      <%= link_to("編集", "/posts/#{@post.id}/edit", {class: "btn btn-secondary btn-sm"}) %>
+      <%= link_to("削除", "/posts/#{@post.id}/delete", {method: "post", data: {confirm: "本当に削除しますか"}, class: "btn btn btn-danger btn-sm"}) %>
+    <% end %>
+  </div>
+</div>
