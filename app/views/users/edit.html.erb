@@ -10,6 +10,6 @@
   <input class="mb-3" type="text" name="name" value="<%= @user.name %>">
   <p class="mb-0">メールアドレス</p>
   <input class="mb-3" type="text"  name="email" value="<%= @user.email %>" size="30">
-  <p><input type="submit" value="保存" class="btn btn-secondary btn-sm mb-3"></p>
+  <p><input type="submit" value="更新" class="btn btn-secondary btn-sm mb-3"></p>
   <%= link_to("ユーザーを削除", "/users/#{@user.id}/delete", {method: "post", data: {confirm: "本当に削除しますか"}, class: "btn btn btn-danger btn-sm"}) %>
 <% end %>
