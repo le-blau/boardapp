@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only:[:index, :show, :edit, :update]}
+  before_action :exclude_incorrect_user, {only:[:edit, :update, :delete]}
 
   def index
     @users = User.all
@@ -77,6 +78,14 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
+  end
+
+  def exclude_incorrect_user
+    @user = User.find_by(id: params[:id])
+    if @user.id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/index")
+    end
   end
 
 end

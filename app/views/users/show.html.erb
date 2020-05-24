@@ -3,9 +3,10 @@
 <p class="mb-0"><%= @user.name %></p>
 <p class="mb-0">メールアドレス</p>
 <p class="mb-1"><%= @user.email %></p>
-<%= link_to("ユーザー情報を編集", "/users/#{@user.id}/edit", {class: "btn btn-secondary btn-sm mb-5"}) %>
-
-<p>投稿</p>
+<% if @user.id == @current_user.id %>
+  <%= link_to("ユーザー情報を編集", "/users/#{@user.id}/edit", {class: "btn btn-secondary btn-sm"}) %>
+<% end %>
+<p class="mt-5">投稿</p>
 <div class="d-flex flex-column">
 	<% @user.posts.each do |post| %>
 		<div class="card bg-light mb-1">
