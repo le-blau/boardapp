@@ -18,7 +18,7 @@
 
       <nav class="my-2 my-md-0 mr-md-3">
         <% if session[:user_id] %>
-          <p class="text-white d-inline"><%= @current_user.name %></p>
+          <%= link_to(@current_user.name, "/users/#{@current_user.id}",{class: "text-decoration-none text-white"}) %>
           <a class="p-2" href="#"><%= link_to("新規投稿", "/posts/new", {class: "text-decoration-none text-white"}) %></a>
           <a class="p-2" href="#"><%= link_to("投稿一覧", "/posts/index", {class: "text-decoration-none text-white"}) %></a>
           <a class="p-2" href="#"><%= link_to("ユーザー一覧", "/users/index", {class: "text-decoration-none text-white"}) %></a>
