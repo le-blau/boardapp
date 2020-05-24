@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  post 'guest_login' => "guest_user#login"
+
   post 'logout' => "users#logout"
 
   get 'login' => "users#login_form"

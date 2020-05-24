@@ -25,6 +25,7 @@
           <%= link_to("ログアウト", "/logout", {method: :post, class: "btn btn-primary mx-2"}) %>
         <% else %>
           <a href="#"><%= link_to("Boardについて", "/about", {class: "text-decoration-none text-white mx-1"}) %></a>
+          <a class="p-2" href="#"><%= link_to("ゲストでログイン", "/guest_login", {method: :post, class: "btn btn-warning mx-1"}) %></a>
           <a class="btn btn-primary mx-1" href="/login">ログイン</a>
           <a class="btn btn-success mx-1" href="/users/new">ユーザ登録</a>
         <% end %>
