@@ -1,10 +1,10 @@
 <h1>新規ユーザー登録</h1>
 <%= form_tag("/users/create") do %>
-<p>ユーザー名</p>
+<p class="m-0">ユーザー名</p>
   <input name="name" value="<%= @user.name %>">
-<p>メールアドレス</p>
+<p class="m-0">メールアドレス</p>
   <input name="email" value="<%= @user.email %>">
-<p>パスワード</p>
+<p class="m-0">パスワード</p>
   <input type="password" name="password" value="<%= @user.password %>">
-  <input type="submit" value="登録">
+  <p><input type="submit" class="btn btn-success btn-sm mt-2" value="登録する"></p>
 <% end %>
